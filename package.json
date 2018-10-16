@@ -1,0 +1,55 @@
+{
+  "name": "@composi/idb",
+  "version": "1.0.0",
+  "description": "A tiny wrapper around IndexedDB for an API similar to localStorage",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "run-s format lint checkjs test",
+    "checkjs": "tsc --allowJs --checkJs --noEmit --moduleResolution node --target ES6 src/*.js",
+    "format": "prettier --no-semi --single-quote --write ./src/*.js",
+    "lint": "eslint --config ./.eslintrc.json src",
+    "start": "run-s format lint checkjs test",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/composi/idb.git"
+  },
+  "keywords": [
+    "composi",
+    "idb",
+    "indexeddb",
+    "datastore",
+    "store",
+    "keyval",
+    "localstorage",
+    "storage",
+    "promise"
+  ],
+  "author": "Robert Biggs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/composi/idb/issues"
+  },
+  "homepage": "https://github.com/composi/idb#readme",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.1",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^4.19.1",
+    "fake-indexeddb": "^2.0.4",
+    "jest": "^23.6.0",
+    "npm-run-all": "^4.1.3",
+    "prettier": "^1.13.7",
+    "typescript": "^3.0.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
