@@ -60,7 +60,7 @@ The `set` method takes two arguments: key and value. Value can be any JavaScript
 
 If the database does not exist at load time, using `set` will create it before inserting the key/value pair.
 
-You can add as many keys as you need to to the database. You can use each key/value pair as a separate table. Each value holding an array of objects. This gives you something like individual tables in your store. You could also just treat the whole store as a table. In that case each key/value pair would be an entry in that table. 
+You can add as many keys as you need to to the database. You can use each key/value pair as a separate store. Each value holding an array of objects. This gives you something like individual tables in your store. You could also just treat the whole store as a store. In that case each key/value pair would be an entry in that store. 
 
 In the following example we set a key/value pair. Since this is async, if you want to do anything after that, you'll need to use a thenable.
 
