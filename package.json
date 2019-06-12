@@ -1,6 +1,6 @@
 {
   "name": "@composi/idb",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A tiny wrapper around IndexedDB for an API similar to localStorage",
   "main": "src/index.js",
   "scripts": {
@@ -41,10 +41,10 @@
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
     "babel-core": "^7.0.0-bridge.0",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^24.8.0",
     "eslint": "^4.19.1",
     "fake-indexeddb": "^2.0.4",
-    "jest": "^23.6.0",
+    "jest": "^24.8.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
     "typescript": "^3.1.6"
