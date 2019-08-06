@@ -1,6 +1,6 @@
 {
   "name": "@composi/idb",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A tiny wrapper around IndexedDB for an API similar to localStorage",
   "main": "src/index.js",
   "scripts": {
