@@ -59,7 +59,7 @@ function get(key, store = getDefaultStore()) {
 
 /**
  *
- * @param {*} key
+ * @param {string} key
  * @param {*} value
  * @param {*} store
  */
@@ -71,7 +71,7 @@ function set(key, value, store = getDefaultStore()) {
 
 /**
  *
- * @param {*} key
+ * @param {string} key
  * @param {*} store
  */
 function remove(key, store = getDefaultStore()) {
@@ -112,11 +112,18 @@ function keys(store = getDefaultStore()) {
   ).then(() => keys)
 }
 
-const name = Symbol('name')
-const storeName = Symbol('storeName')
 /**
- * A new database ready to use.
- *
+ * @typedef {Object} IDB
+ * @prop {(key: string) => Promise} get Get a dataStore value based on the provided key.
+ * @prop {(key: string, value: any) => Promise} set Set a dataStore value based on the key and value.
+ * @prop {(key: string) => Promise} remove Delete a dataStore value based on the provided key.
+ * @prop {() => Promise} clear Delete all data from the dataStore.
+ * @prop {() => Promise} keys Get all key/value pairs in the dataStore.
+ * @prop {string} name The database name.
+ * @prop {string} storeName The name of the database table used to store key/value pairs.
+ */
+/**
+ * A promise-based wrapper for IndexDB approximating the interface of localStorage for ease of use.
  * This has the following methods:
  * @example
  * get(key)
@@ -124,6 +131,7 @@ const storeName = Symbol('storeName')
  * remove(key)
  * clear()
  * keys()
+ * @type {IDB}
  */
 export const idb = {
   get,
@@ -131,18 +139,6 @@ export const idb = {
   remove,
   clear,
   keys,
-  [name]: 'composi-idb',
-  get name() {
-    return this[name]
-  },
-  set name(value) {
-    return
-  },
-  [storeName]: 'composi-store',
-  get storeName() {
-    return this[storeName]
-  },
-  set storeName(value) {
-    return
-  }
+  name: 'composi-idb',
+  storeName: 'composi-store'
 }
