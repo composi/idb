@@ -38,7 +38,11 @@ class Store {
     }
   }
 }
+/** @type{Store} */
 let store
+/**
+ * @returns {Store}
+ */
 function getDefaultStore() {
   if (!store) store = new Store()
   return store
@@ -60,8 +64,8 @@ function get(key, store = getDefaultStore()) {
 /**
  *
  * @param {string} key
- * @param {*} value
- * @param {*} store
+ * @param {any} value
+ * @param {Store} store
  */
 function set(key, value, store = getDefaultStore()) {
   return store[IDBStore]('readwrite', store => {
@@ -72,7 +76,7 @@ function set(key, value, store = getDefaultStore()) {
 /**
  *
  * @param {string} key
- * @param {*} store
+ * @param {Store} store
  */
 function remove(key, store = getDefaultStore()) {
   return store[IDBStore]('readwrite', store => {
@@ -82,7 +86,7 @@ function remove(key, store = getDefaultStore()) {
 
 /**
  *
- * @param {*} store
+ * @param {Store} store
  */
 function clear(store = getDefaultStore()) {
   return store[IDBStore]('readwrite', store => {
@@ -92,7 +96,7 @@ function clear(store = getDefaultStore()) {
 
 /**
  *
- * @param {*} store
+ * @param {Store} store
  */
 function keys(store = getDefaultStore()) {
   const keys = []
