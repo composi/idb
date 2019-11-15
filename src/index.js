@@ -13,6 +13,7 @@ class Store {
     const version = 1
     this.storeName = storeName
     this.dbName = dbName
+    /** _dbp is DataBase Promis */
     this._dbp = new Promise((resolve, reject) => {
       const openreq = indexedDB.open(dbName, version)
       openreq.onerror = () => reject(openreq.error)
