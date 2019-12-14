@@ -53,7 +53,7 @@ function getDefaultStore() {
  * Get a value based on the provided key.
  * @param {string} key The key to use.
  * @param {any} store A default value provided by IDB.
- * @return {Promise} Promise
+ * @returns {Promise} Promise
  */
 function get(key, store = getDefaultStore()) {
   let req
@@ -63,10 +63,11 @@ function get(key, store = getDefaultStore()) {
 }
 
 /**
- *
+ * Get key value pair from database table.
  * @param {string} key
  * @param {any} value
  * @param {Store} store
+ * @returns {Promise} Promise
  */
 function set(key, value, store = getDefaultStore()) {
   return store[IDBStore]('readwrite', store => {
@@ -75,9 +76,10 @@ function set(key, value, store = getDefaultStore()) {
 }
 
 /**
- *
+ * Remove key from table.
  * @param {string} key
  * @param {Store} store
+ * @returns {Promise} Promise
  */
 function remove(key, store = getDefaultStore()) {
   return store[IDBStore]('readwrite', store => {
@@ -86,18 +88,22 @@ function remove(key, store = getDefaultStore()) {
 }
 
 /**
- *
+ * Clear all entries from table.
  * @param {Store} store
+ * @returns {Promise} Promise
  */
 function clear(store = getDefaultStore()) {
   return store[IDBStore]('readwrite', store => {
     store.clear()
   })
 }
-
 /**
- *
+ * @template T
+ */
+/**
+ * Return all keys in table.
  * @param {Store} store
+ * @returns {Promise<T[]>} Promise
  */
 function keys(store = getDefaultStore()) {
   const keys = []

@@ -1,11 +1,11 @@
 {
   "name": "@composi/idb",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A tiny wrapper around IndexedDB for an API similar to localStorage",
   "main": "src/index.js",
   "scripts": {
     "build": "run-s format lint checkjs test",
-    "checkjs": "tsc --allowJs --checkJs --noEmit --moduleResolution node --target ES6 src/*.js",
+    "checkjs": "tsc",
     "format": "prettier --no-semi --single-quote --write ./src/*.js",
     "lint": "eslint --config ./.eslintrc.json src",
     "start": "run-s format lint checkjs test",
@@ -47,7 +47,7 @@
     "jest": "^24.8.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3",
-    "typescript": "^3.1.6"
+    "typescript": "^3.7.3"
   },
   "publishConfig": {
     "access": "public"
